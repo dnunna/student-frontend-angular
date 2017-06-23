@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
  
 import { StudentComponent }   from '../student/student.component';
 import { StudentFormComponent }   from '../student-form/student-form.component';
+import { MajorComponent }   from '../major/major.component';
+import { MajorFormComponent }   from '../major-form/major-form.component';
 import { HomeComponent }   from '../home/home.component';
  
 const routes: Routes = [
@@ -11,6 +13,9 @@ const routes: Routes = [
   { path: 'student',  component: StudentComponent },
   { path: 'student/edit/:id', component: StudentFormComponent },
   { path: 'student/add', component: StudentFormComponent },
+    { path: 'major',  component: MajorComponent },
+  { path: 'major/edit/:id', component: MajorFormComponent },
+  { path: 'major/add', component: MajorFormComponent },
 ];
  
 @NgModule({
