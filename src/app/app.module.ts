@@ -18,6 +18,7 @@ import { MajorComponent } from './major/major.component';
 import { MajorFormComponent } from './major-form/major-form.component';
 import { GradeFormComponent } from './grade-form/grade-form.component';
 import { GradeComponent } from './grade/grade.component';
+import { StatusMessageComponent } from './status-message/status-message.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GradeComponent } from './grade/grade.component';
     MajorComponent,
     MajorFormComponent,
     GradeFormComponent,
-    GradeComponent
+    GradeComponent,
+    StatusMessageComponent
   ],
   imports: [
     BrowserModule,
