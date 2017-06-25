@@ -6,28 +6,35 @@ import { Location }               from '@angular/common';
 import { DataService } from '../data.service'
 
 @Component({
-  selector: 'app-student-form',
-  templateUrl: './student-form.component.html',
-  styleUrls: ['./student-form.component.css']
+  selector: 'app-major-class-form',
+  templateUrl: './major-class-form.component.html',
+  styleUrls: ['./major-class-form.component.css']
 })
-export class StudentFormComponent implements OnInit {
+export class MajorClassFormComponent implements OnInit {
 
   successMessage: string;
   errorMessage: string;
 
-  student: object = {};
+  major_class: object = {};
   majors: any[];
+  classes: any[];
 
   getRecordForEdit(){
     this.route.params
-      .switchMap((params: Params) => this.dataService.getRecord("student", +params['id']))
-      .subscribe(student => this.student = student);
+      .switchMap((params: Params) => this.dataService.getRecord("major_class", +params['id']))
+      .subscribe(major_class => this.major_class = major_class);
   }
- 
+
   getMajors() {
     this.dataService.getRecords("major")
       .subscribe(
         majors => this.majors = majors,
+        error =>  this.errorMessage = <any>error);
+  }
+    getClasses() {
+    this.dataService.getRecords("class")
+      .subscribe(
+        classes => this.classes = classes,
         error =>  this.errorMessage = <any>error);
   }
   constructor(
@@ -38,27 +45,27 @@ export class StudentFormComponent implements OnInit {
 
   ngOnInit() {
     this.getMajors();
+    this.getClasses();
     this.route.params
       .subscribe((params: Params) => {
         (+params['id']) ? this.getRecordForEdit() : null;
       });
-  
   }
 
-  saveStudent(id){
+  saveMajorClass(id){
     if(typeof id === "number"){
-      this.dataService.editRecord("student", this.student, id)
+      this.dataService.editRecord("major_class", this.major_class, id)
           .subscribe(
-            student => this.successMessage = "Record updated succesfully",
+            major_class => this.successMessage = "Record updated succesfully",
             error =>  this.errorMessage = <any>error);
     }else{
-      this.dataService.addRecord("student", this.student)
+      this.dataService.addRecord("major_class", this.major_class)
           .subscribe(
-            student => this.successMessage = "Record added succesfully",
+            major_class => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);
     }
 
-    this.student = {};
+    this.major_class = {};
     
   }
 
@@ -68,4 +75,12 @@ export class StudentFormComponent implements OnInit {
     }
   }
 
+  byClassId(item1, item2){
+    if (item1 != undefined && item2 != undefined) {
+      return item1.class_id === item2.class_id;
+    }
+  }
+
 }
+
+
