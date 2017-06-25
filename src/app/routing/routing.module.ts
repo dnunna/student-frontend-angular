@@ -8,6 +8,8 @@ import { MajorFormComponent }   from '../major-form/major-form.component';
 import { GradeComponent }   from '../grade/grade.component';
 import { GradeFormComponent }   from '../grade-form/grade-form.component';
 import { HomeComponent }   from '../home/home.component';
+import { MajorClassComponent }   from '../major-class/major-class.component';
+import { MajorClassFormComponent }   from '../major-class-form/major-class-form.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +20,9 @@ const routes: Routes = [
   { path: 'major',  component: MajorComponent },
   { path: 'major/edit/:id', component: MajorFormComponent },
   { path: 'major/add', component: MajorFormComponent },
+  { path: 'major-class',  component: MajorClassComponent },
+  { path: 'major-class/edit/:id', component: MajorClassFormComponent },
+  { path: 'major-class/add', component: MajorClassFormComponent },
   { path: 'grade',  component: GradeComponent },
   { path: 'grade/edit/:id', component: GradeFormComponent },
   { path: 'grade/add', component: GradeFormComponent },

@@ -21,6 +21,10 @@ import { GradeComponent } from './grade/grade.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
 import { ClassComponent } from './class/class.component';
 import { ClassFormComponent } from './class-form/class-form.component';
+import { MajorClassComponent } from './major-class/major-class.component';
+import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
+import { StudentClassFormComponent } from './student-class-form/student-class-form.component';
+import { StudentClassComponent } from './student-class/student-class.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ClassFormComponent } from './class-form/class-form.component';
     GradeComponent,
     StatusMessageComponent,
     ClassComponent,
-    ClassFormComponent
+    ClassFormComponent,
+    MajorClassComponent,
+    MajorClassFormComponent,
+    StudentClassFormComponent,
+    StudentClassComponent
   ],
   imports: [
     BrowserModule,
