@@ -18,6 +18,8 @@ import { MajorComponent } from './major/major.component';
 import { MajorFormComponent } from './major-form/major-form.component';
 import { GradeFormComponent } from './grade-form/grade-form.component';
 import { GradeComponent } from './grade/grade.component';
+import { InstructorFormComponent } from './instructor-form/instructor-form.component';
+import { InstructorComponent } from './instructor/instructor.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
 import { ClassComponent } from './class/class.component';
 import { ClassFormComponent } from './class-form/class-form.component';
@@ -38,6 +40,8 @@ import { StudentClassComponent } from './student-class/student-class.component';
     MajorFormComponent,
     GradeFormComponent,
     GradeComponent,
+    InstructorFormComponent,
+    InstructorComponent,
     StatusMessageComponent,
     ClassComponent,
     ClassFormComponent,
