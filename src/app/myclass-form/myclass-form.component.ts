@@ -16,11 +16,19 @@ export class MyclassFormComponent implements OnInit {
   errorMessage: string;
 
   myclass: object = {};
+  instructors: any[];
 
   getRecordForEdit(){
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord("class", +params['id']))
       .subscribe(myclass => this.myclass= myclass);
+  }
+
+  getInstructors() {
+    this.dataService.getRecords("instructor")
+      .subscribe(
+        instructors => this.instructors = instructors,
+        error =>  this.errorMessage = <any>error);
   }
 
   constructor(
@@ -30,6 +38,7 @@ export class MyclassFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getInstructors();
     this.route.params
       .subscribe((params: Params) => {
         (+params['id']) ? this.getRecordForEdit() : null;
@@ -52,6 +61,12 @@ export class MyclassFormComponent implements OnInit {
 
     this.myclass = {};
     
+  }
+
+  byinstructor_id(item1, item2){
+    if (item1 != undefined && item2 != undefined) {
+      return item1.instructor_id === item2.instructor_id;
+    }
   }
 
 }
