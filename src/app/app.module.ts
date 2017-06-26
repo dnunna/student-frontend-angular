@@ -21,8 +21,8 @@ import { GradeComponent } from './grade/grade.component';
 import { InstructorFormComponent } from './instructor-form/instructor-form.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
-import { ClassComponent } from './class/class.component';
-import { ClassFormComponent } from './class-form/class-form.component';
+import { MyclassComponent } from './myclass/myclass.component';
+import { MyclassFormComponent } from './myclass-form/myclass-form.component';
 import { MajorClassComponent } from './major-class/major-class.component';
 import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
 import { StudentClassFormComponent } from './student-class-form/student-class-form.component';
@@ -43,8 +43,8 @@ import { StudentClassComponent } from './student-class/student-class.component';
     InstructorFormComponent,
     InstructorComponent,
     StatusMessageComponent,
-    ClassComponent,
-    ClassFormComponent,
+    MyclassComponent,
+    MyclassFormComponent,
     MajorClassComponent,
     MajorClassFormComponent,
     StudentClassFormComponent,
