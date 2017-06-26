@@ -9,6 +9,8 @@ import { GradeComponent }   from '../grade/grade.component';
 import { GradeFormComponent }   from '../grade-form/grade-form.component';
 import { AssignmentComponent }   from '../assignment/assignment.component';
 import { AssignmentFormComponent }   from '../assignment-form/assignment-form.component';
+import { InstructorComponent }   from '../instructor/instructor.component';
+import { InstructorFormComponent }   from '../instructor-form/instructor-form.component';
 import { MyclassComponent }   from '../myclass/myclass.component';
 import { MyclassFormComponent }   from '../myclass-form/myclass-form.component';
 import { HomeComponent }   from '../home/home.component';
@@ -35,6 +37,9 @@ const routes: Routes = [
   { path: 'assignment',  component: AssignmentComponent },
   { path: 'assignment/edit/:id', component: AssignmentFormComponent },
   { path: 'assignment/add', component: AssignmentFormComponent },
+  { path: 'instructor',  component: InstructorComponent },
+  { path: 'instructor/edit/:id', component: InstructorFormComponent },
+  { path: 'instructor/add', component: InstructorFormComponent },
   { path: 'myclass',  component: MyclassComponent },
   { path: 'myclass/edit/:id', component: MyclassFormComponent },
   { path: 'myclass/add', component: MyclassFormComponent },
