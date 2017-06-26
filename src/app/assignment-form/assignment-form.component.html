@@ -19,33 +19,53 @@
 
 <form (ngSubmit)="saveAssignment(assignment.assignment_id)"  #assignmentForm="ngForm" class="form-horizontal">
   <input [(ngModel)]="assignment.assignment_id" type="hidden" name="assignment_id">
+
   <div class="form-group">
-    <label for="student_id" class="col-sm-2 control-label">Student ID</label>
+    <label for="student_id" class="col-sm-2 control-label">Student</label>
     <div class="col-sm-10">
-      <input [(ngModel)]="assignment.student_id" type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID" required>
+      <select [compareWith]="byStudentId" [(ngModel)]="assignment.student_id" id="assignment.student_id" name="student_id" class="selectpicker" required>
+        <option *ngFor="let student of students" [ngValue]="student">
+            {{student.first_name}} {{student.last_name}}
+        </option>
+    </select>
     </div>
   </div>
+
   <div class="form-group">
     <label for="assignment_nbr" class="col-sm-2 control-label">Assignment Number</label>
     <div class="col-sm-10">
       <input [(ngModel)]="assignment.assignment_nbr" type="text" class="form-control" id="assignment_nbr" name="assignment_nbr" placeholder="Assignment Number" required>
     </div>
   </div>
+
   <div class="form-group">
     <label for="grade_id" class="col-sm-2 control-label">Grade</label>
     <div class="col-sm-10">
-      <input [(ngModel)]="assignment.grade_id.grade" type="text" class="form-control" id="grade_id" name="grade_id" placeholder="Grade ID" required>
+      <select [compareWith]="byGradeId" [(ngModel)]="assignment.grade_id" id="assignment.grade_id" name="grade_id" class="selectpicker" required>
+        <option [ngValue]='null'></option>
+        <option *ngFor="let grade of grades" [ngValue]="grade">
+            {{grade.grade}}
+        </option>
+    </select>
     </div>
   </div>
+
   <div class="form-group">
-    <label for="class_id" class="col-sm-2 control-label">Class ID</label>
+    <label for="class_id" class="col-sm-2 control-label">Class</label>
     <div class="col-sm-10">
-      <input [(ngModel)]="assignment.class_id" type="text" class="form-control" id="class_id" name="class_id" placeholder="Class ID" required>
+      <select [compareWith]="byClassId" [(ngModel)]="assignment.class_id" id="assignment.class_id" name="class_id" class="selectpicker" required>
+        <option *ngFor="let class of classes" [ngValue]="class">
+            {{class.subject}} {{class.course}}
+        </option>
+    </select>
     </div>
   </div>
+  
+
    <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
 </form>
+

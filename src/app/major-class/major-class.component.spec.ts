@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClassFormComponent } from './class-form.component';
+import { MajorClassComponent } from './major-class.component';
 
-describe('ClassFormComponent', () => {
-  let component: ClassFormComponent;
-  let fixture: ComponentFixture<ClassFormComponent>;
+describe('MajorClassComponent', () => {
+  let component: MajorClassComponent;
+  let fixture: ComponentFixture<MajorClassComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClassFormComponent ]
+      declarations: [ MajorClassComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClassFormComponent);
+    fixture = TestBed.createComponent(MajorClassComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

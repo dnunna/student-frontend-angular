@@ -6,37 +6,29 @@ import { Location }               from '@angular/common';
 import { DataService } from '../data.service'
 
 @Component({
-  selector: 'app-assignment-form',
-  templateUrl: './assignment-form.component.html',
-  styleUrls: ['./assignment-form.component.css']
+  selector: 'app-student-class-form',
+  templateUrl: './student-class-form.component.html',
+  styleUrls: ['./student-class-form.component.css']
 })
-export class AssignmentFormComponent implements OnInit {
+export class StudentClassFormComponent implements OnInit {
 
   successMessage: string;
   errorMessage: string;
 
-  assignment: object = {};
+  student_class: object = {};
   classes: any[];
-  grades: any[];
   students: any[];
 
   getRecordForEdit(){
     this.route.params
-      .switchMap((params: Params) => this.dataService.getRecord("assignment", +params['id']))
-      .subscribe(assignment => this.assignment = assignment);
+      .switchMap((params: Params) => this.dataService.getRecord("student_class", +params['id']))
+      .subscribe(student_class => this.student_class = student_class);
   }
 
   getClasses() {
     this.dataService.getRecords("class")
       .subscribe(
         classes => this.classes = classes,
-        error =>  this.errorMessage = <any>error);
-  }
-
-  getGrades() {
-    this.dataService.getRecords("grade")
-      .subscribe(
-        grades => this.grades = grades,
         error =>  this.errorMessage = <any>error);
   }
 
@@ -47,7 +39,6 @@ export class AssignmentFormComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
@@ -56,29 +47,27 @@ export class AssignmentFormComponent implements OnInit {
 
   ngOnInit() {
     this.getClasses();
-    this.getGrades();
     this.getStudents();
     this.route.params
       .subscribe((params: Params) => {
         (+params['id']) ? this.getRecordForEdit() : null;
       });
-  
   }
 
-  saveAssignment(id){
+  saveStudentClass(id){
     if(typeof id === "number"){
-      this.dataService.editRecord("assignment", this.assignment, id)
+      this.dataService.editRecord("student_class", this.student_class, id)
           .subscribe(
-            assignment => this.successMessage = "Record updated succesfully",
+            student_class => this.successMessage = "Record updated succesfully",
             error =>  this.errorMessage = <any>error);
     }else{
-      this.dataService.addRecord("assignment", this.assignment)
+      this.dataService.addRecord("student_class", this.student_class)
           .subscribe(
-            assignment => this.successMessage = "Record added succesfully",
+            student_class => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);
     }
 
-    this.assignment = {};
+    this.student_class = {};
     
   }
 
@@ -88,18 +77,11 @@ export class AssignmentFormComponent implements OnInit {
     }
   }
 
-  byGradeId(item1, item2){
-    if (item1 != undefined && item2 != undefined) {
-      return item1.grade_id === item2.grade_id;
-    }
-  }
-
   byStudentId(item1, item2){
     if (item1 != undefined && item2 != undefined) {
       return item1.student_id === item2.student_id;
     }
   }
-  
 
 }
 

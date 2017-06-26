@@ -19,10 +19,15 @@ import { MajorFormComponent } from './major-form/major-form.component';
 import { GradeFormComponent } from './grade-form/grade-form.component';
 import { GradeComponent } from './grade/grade.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
-import { ClassComponent } from './class/class.component';
-import { ClassFormComponent } from './class-form/class-form.component';
+import { MyclassComponent } from './myclass/myclass.component';
+import { MyclassFormComponent } from './myclass-form/myclass-form.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { AssignmentFormComponent } from './assignment-form/assignment-form.component';
+import { MajorClassComponent } from './major-class/major-class.component';
+import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
+import { StudentClassFormComponent } from './student-class-form/student-class-form.component';
+import { StudentClassComponent } from './student-class/student-class.component';
+
 
 @NgModule({
   declarations: [
@@ -37,10 +42,15 @@ import { AssignmentFormComponent } from './assignment-form/assignment-form.compo
     GradeFormComponent,
     GradeComponent,
     StatusMessageComponent,
-    ClassComponent,
-    ClassFormComponent,
+    MyclassComponent,
+    MyclassFormComponent,
     AssignmentComponent,
-    AssignmentFormComponent
+    AssignmentFormComponent,
+    MajorClassComponent,
+    MajorClassFormComponent,
+    StudentClassFormComponent,
+    StudentClassComponent
+
   ],
   imports: [
     BrowserModule,
