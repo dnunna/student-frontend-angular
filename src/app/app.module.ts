@@ -23,10 +23,13 @@ import { InstructorComponent } from './instructor/instructor.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
 import { MyclassComponent } from './myclass/myclass.component';
 import { MyclassFormComponent } from './myclass-form/myclass-form.component';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { AssignmentFormComponent } from './assignment-form/assignment-form.component';
 import { MajorClassComponent } from './major-class/major-class.component';
 import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
 import { StudentClassFormComponent } from './student-class-form/student-class-form.component';
 import { StudentClassComponent } from './student-class/student-class.component';
+
 
 @NgModule({
   declarations: [
@@ -45,10 +48,13 @@ import { StudentClassComponent } from './student-class/student-class.component';
     StatusMessageComponent,
     MyclassComponent,
     MyclassFormComponent,
+    AssignmentComponent,
+    AssignmentFormComponent,
     MajorClassComponent,
     MajorClassFormComponent,
     StudentClassFormComponent,
     StudentClassComponent
+
   ],
   imports: [
     BrowserModule,
