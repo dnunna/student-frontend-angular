@@ -19,7 +19,7 @@ export class MyclassFormComponent implements OnInit {
 
   getRecordForEdit(){
     this.route.params
-      .switchMap((params: Params) => this.dataService.getRecord("myclass", +params['id']))
+      .switchMap((params: Params) => this.dataService.getRecord("class", +params['id']))
       .subscribe(myclass => this.myclass= myclass);
   }
 
@@ -39,12 +39,12 @@ export class MyclassFormComponent implements OnInit {
 
   saveMyclass(id){
     if(typeof id === "number"){
-      this.dataService.editRecord("myclass", this.myclass, id)
+      this.dataService.editRecord("class", this.myclass, id)
           .subscribe(
             myclass => this.successMessage = "Record updated succesfully",
             error =>  this.errorMessage = <any>error);
     }else{
-      this.dataService.addRecord("myclass", this.myclass)
+      this.dataService.addRecord("class", this.myclass)
           .subscribe(
             myclass => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);

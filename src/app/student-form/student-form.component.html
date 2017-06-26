@@ -47,7 +47,8 @@
   <div class="form-group">
     <label for="major_id" class="col-sm-2 control-label">Major ID</label>
     <div class="col-sm-10">
-      <select [compareWith]="byMajorId" [(ngModel)]="student.major_id" id="student.major_id" name="major_id" class="selectpicker" required>
+      <select [compareWith]="byMajorId" [(ngModel)]="student.major_id" id="student.major_id" name="major_id" class="selectpicker">
+        <option [ngValue]="null"></option>
         <option *ngFor="let major of majors" [ngValue]="major">
             {{major.major}}
         </option>

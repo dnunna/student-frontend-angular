@@ -14,7 +14,7 @@ export class MajorClassFormComponent implements OnInit {
 
   successMessage: string;
   errorMessage: string;
-
+  
   major_class: object = {};
   majors: any[];
   classes: any[];
