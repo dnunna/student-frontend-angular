@@ -7,6 +7,8 @@ import { MajorComponent }   from '../major/major.component';
 import { MajorFormComponent }   from '../major-form/major-form.component';
 import { GradeComponent }   from '../grade/grade.component';
 import { GradeFormComponent }   from '../grade-form/grade-form.component';
+import { AssignmentComponent }   from '../assignment/assignment.component';
+import { AssignmentFormComponent }   from '../assignment-form/assignment-form.component';
 import { HomeComponent }   from '../home/home.component';
  
 const routes: Routes = [
@@ -21,6 +23,9 @@ const routes: Routes = [
   { path: 'grade',  component: GradeComponent },
   { path: 'grade/edit/:id', component: GradeFormComponent },
   { path: 'grade/add', component: GradeFormComponent },
+  { path: 'assignment',  component: AssignmentComponent },
+  { path: 'assignment/edit/:id', component: AssignmentFormComponent },
+  { path: 'assignment/add', component: AssignmentFormComponent },
 ];
  
 @NgModule({
