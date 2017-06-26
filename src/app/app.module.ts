@@ -19,17 +19,13 @@ import { MajorFormComponent } from './major-form/major-form.component';
 import { GradeFormComponent } from './grade-form/grade-form.component';
 import { GradeComponent } from './grade/grade.component';
 import { StatusMessageComponent } from './status-message/status-message.component';
-<<<<<<< HEAD
 import { MyclassComponent } from './myclass/myclass.component';
 import { MyclassFormComponent } from './myclass-form/myclass-form.component';
-=======
-import { ClassComponent } from './class/class.component';
-import { ClassFormComponent } from './class-form/class-form.component';
 import { MajorClassComponent } from './major-class/major-class.component';
 import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
 import { StudentClassFormComponent } from './student-class-form/student-class-form.component';
 import { StudentClassComponent } from './student-class/student-class.component';
->>>>>>> f755cbb03b9671c609fb860162226b29445db0dc
+
 
 @NgModule({
   declarations: [
@@ -44,18 +40,13 @@ import { StudentClassComponent } from './student-class/student-class.component';
     GradeFormComponent,
     GradeComponent,
     StatusMessageComponent,
-<<<<<<< HEAD
     MyclassComponent,
     MyclassFormComponent,
-  
-=======
-    ClassComponent,
-    ClassFormComponent,
     MajorClassComponent,
     MajorClassFormComponent,
     StudentClassFormComponent,
     StudentClassComponent
->>>>>>> f755cbb03b9671c609fb860162226b29445db0dc
+
   ],
   imports: [
     BrowserModule,
